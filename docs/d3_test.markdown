@@ -3,7 +3,6 @@ layout: page
 title: d3 Test
 permalink: /d3test/
 ---
-<!DOCTYPE html>
 <meta charset="utf-8">
 <style>
 
