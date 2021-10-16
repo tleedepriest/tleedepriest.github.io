@@ -1,7 +1,7 @@
 ---
 layout: page
 title: BJJ Lineage
-permalink: /test/
+permalink: /bjjlineage/
 ---
 
 ![](hierarchy_kk.png)
