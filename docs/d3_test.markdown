@@ -15,84 +15,59 @@ permalink: /d3test/
   stroke: #fff;
   stroke-width: 1.5px;
 }
-
 </style>
-<svg width="960" height="600"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var svg = d3.select("d3div"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+var width = $("#d3div").width(),
+    height = 500;
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+var color = d3.scale.category20();
 
-var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }))
-    .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
+var force = d3.layout.force()
+    .charge(-120)
+    .linkDistance(30)
+    .size([width, height]);
 
-d3.json("miserables.json", function(error, graph) {
+var svg = d3.select("#d3div").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("/data/miserables.json", function(error, graph) {
   if (error) throw error;
 
-  var link = svg.append("g")
-      .attr("class", "links")
-    .selectAll("line")
-    .data(graph.links)
-    .enter().append("line")
-      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+  force
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .start();
 
-  var node = svg.append("g")
-      .attr("class", "nodes")
-    .selectAll("circle")
-    .data(graph.nodes)
+  var link = svg.selectAll(".link")
+      .data(graph.links)
+    .enter().append("line")
+      .attr("class", "link")
+      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+  var node = svg.selectAll(".node")
+      .data(graph.nodes)
     .enter().append("circle")
+      .attr("class", "node")
       .attr("r", 5)
-      .attr("fill", function(d) { return color(d.group); })
-      .call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
+      .style("fill", function(d) { return color(d.group); })
+      .call(force.drag);
 
   node.append("title")
-      .text(function(d) { return d.id; });
+      .text(function(d) { return d.name; });
 
-  simulation
-      .nodes(graph.nodes)
-      .on("tick", ticked);
-
-  simulation.force("link")
-      .links(graph.links);
-
-  function ticked() {
-    link
-        .attr("x1", function(d) { return d.source.x; })
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
         .attr("y2", function(d) { return d.target.y; });
 
-    node
-        .attr("cx", function(d) { return d.x; })
+    node.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
-  }
+  });
 });
 
-function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
-
-function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
-}
-
-function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
-  d.fx = null;
-  d.fy = null;
-}
-console.log("hello")
 </script>
 [jekyll-organization]: https://github.com/jekyll
