@@ -16,8 +16,8 @@ permalink: /d3test/
 }
 
 </style>
-<svg width="960" height="600"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<svg width="960" height="600"></svg>
 <script>
 
 var svg = d3.select("svg"),
@@ -30,8 +30,8 @@ var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
-
-d3.json("/data/miserables.json", function(graph) {
+console.log("hello");
+d3.json("miserables.json", function(graph) {
   var link = svg.append("g")
 		.attr("class", "links")
 		.selectAll("line").data(graph.links)
