@@ -21,7 +21,7 @@ permalink: /d3test/
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
-var svg = d3.select("svg"),
+var svg = d3.select("d3div"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
