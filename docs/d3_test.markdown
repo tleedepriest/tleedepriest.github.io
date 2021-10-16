@@ -31,12 +31,10 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("miserables.json", function(error, graph) {
-	console.log(graph);
+d3.json("miserables.json", function(graph) {
   var link = svg.append("g")
 		.attr("class", "links")
-		.selectAll("line")
-		.data(graph.links)
+		.selectAll("line").data(graph.links)
 		.enter().append("line")
 		.attr("stroke-width", function(d) { return d.value; });
 
