@@ -18,7 +18,6 @@ permalink: /d3test/
 </style>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <svg width="960" height="600"></svg>
-
 <script>
 
 var svg = d3.select("svg"),
@@ -32,20 +31,23 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("/miserables.json", function(graph) {
+d3.json("miserables.json", function(error, graph) {
+  if (error) throw error;
+
   var link = svg.append("g")
-		.attr("class", "links")
-		.selectAll("line").data(graph.links)
-		.enter().append("line")
-		.attr("stroke-width", function(d) { return d.value; });
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
   var node = svg.append("g")
-		.attr("class", "nodes")
-		.selectAll("circle")
-		.data(graph.nodes)
-		.enter().append("circle")
-		.attr("r", 5)
-		.attr("fill", function(d) { return color(d.group); })
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 5)
+      .attr("fill", function(d) { return color(d.group); })
       .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
