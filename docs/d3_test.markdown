@@ -21,7 +21,7 @@ permalink: /d3test/
 
 <script>
 
-var svg = d3.select("#svg"),
+var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
@@ -32,7 +32,7 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("miserables.json", function(graph) {
+d3.json("/miserables.json", function(graph) {
   var link = svg.append("g")
 		.attr("class", "links")
 		.selectAll("line").data(graph.links)
