@@ -93,6 +93,6 @@ function dragended(d) {
   d.fx = null;
   d.fy = null;
 }
-
+console.log("hello")
 </script>
 [jekyll-organization]: https://github.com/jekyll
