@@ -3,7 +3,6 @@ layout: page
 title: d3 Test
 permalink: /d3test/
 ---
-<meta charset="utf-8">
 <style>
 
 .links line {
