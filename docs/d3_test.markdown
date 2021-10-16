@@ -16,6 +16,7 @@ permalink: /d3test/
   stroke-width: 1.5px;
 }
 </style>
+<script src="//code.jquery.com/jquery.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
