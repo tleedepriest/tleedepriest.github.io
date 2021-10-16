@@ -16,8 +16,8 @@ permalink: /d3test/
   stroke-width: 1.5px;
 }
 </style>
-<script src="//code.jquery.com/jquery.js"></script>
-<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
