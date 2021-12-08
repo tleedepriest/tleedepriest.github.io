@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Curated Resources"
-date:   2022-10-07
+date:   2021-10-07
 categories: jekyll update
 ---
 

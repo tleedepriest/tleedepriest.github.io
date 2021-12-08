@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Luigi Pipeline Insights"
-date:   2022-10-15
+date:   2021-10-15
 categories: jekyll update
 ---
 

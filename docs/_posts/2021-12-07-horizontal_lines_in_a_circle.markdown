@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Luigi Pipeline Insights"
+date:   2021-12-07
+categories: jekyll update
+---
+
 ### Developing a Generative Art Drawing Software
 
 I recently started creating generative art, and I thought it would be a great opportunity for me to improve my programming skills while becoming more comfortable with the OOP paradigm - Until discovering Luigi and Airflow, I worked, largely, with scripts chained together in a functional paradigm. The scripts were powered by a Makefile that tracked and generated/touched various empty .marker files.
