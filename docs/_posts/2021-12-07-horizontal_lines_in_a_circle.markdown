@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Luigi Pipeline Insights"
+title:  "Developing a Generative Art Drawing Software"
 date:   2021-12-07
 categories: jekyll update
 ---
