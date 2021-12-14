@@ -1,9 +1,12 @@
 ---
 layout: page
-title: BJJanalysis
-permalink: /bjjanalysis/
+title: BJJ Analysis
+permalink: /BJJ Analysis/
 ---
+## 12-14-2021
 
-![](hierarchy_kk.png)
-This is just a page where I post videos I am analyzing for Jiu-Jitsu. I may want to incorporate these videos into a future version of the Hierearchy I created.
-[jekyll-organization]: https://github.com/jekyll
+[Garry Tonon vs Dante Leon - 2019 ADCC World Championships](https://www.youtube.com/watch?v=WPFIX9c4UV0)
+
+Garry Tonon hits a very interesting Iminari Roll from the top position to enter an inside heelhook. He also uses his thumb to break a body lock during Dante Leon's back attempt. 
+
+Finally, Gary hits an outside heelhook at the end.
