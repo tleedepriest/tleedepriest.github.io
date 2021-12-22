@@ -64,7 +64,7 @@ permalink: /d3test/
                 .data(graph.nodes)
                 .enter().append("circle")
                 .attr("r", 5)
-                .attr("fill", d => color(d.group))
+                //.attr("fill", d => color(d.group))
                 // This part adds event listeners to each of the nodes; when you click,
                 //  move, and release the mouse on a node, each of these functions gets 
                 //  called (we've defined them at the end of the file)
