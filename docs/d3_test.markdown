@@ -41,7 +41,7 @@ permalink: /d3test/
             // forceCenter acts like gravity, keeping the whole visualization in the 
             //  middle of the screen
             .force("center", d3.forceCenter(width / 2, height / 2))
-	    .force("radial"), d3.forceRadial(500, width /2, height / 2);
+	    .force("radial", d3.forceRadial(500, width /2, height / 2));
 
         // This part triggers an asynchronous call to go grab the data in another file...file places in _site folder?
         //  stuff inside this fuction might not actually happen for a while!
