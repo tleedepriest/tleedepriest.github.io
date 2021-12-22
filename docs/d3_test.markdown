@@ -37,7 +37,7 @@ permalink: /d3test/
             .force("link", d3.forceLink().id(d => d.id))
             // forceManyBody creates a repulsive force between nodes, 
             //  keeping them away from each other
-            .force("charge", d3.forceManyBody().strength(0))
+            .force("charge", d3.forceManyBody().strength(-5))
             // forceCenter acts like gravity, keeping the whole visualization in the 
             //  middle of the screen
             .force("center", d3.forceCenter(width / 2, height / 2))
