@@ -37,11 +37,11 @@ permalink: /d3test/
             .force("link", d3.forceLink().id(d => d.id))
             // forceManyBody creates a repulsive force between nodes, 
             //  keeping them away from each other
-            .force("charge", d3.forceManyBody().strength(5))
+            .force("charge", d3.forceManyBody().strength(30))
             // forceCenter acts like gravity, keeping the whole visualization in the 
             //  middle of the screen
             .force("center", d3.forceCenter(width / 2, height / 2))
-	    .force("radial", d3.forceRadial(200, width /2, height / 2));
+	    //.force("radial", d3.forceRadial(200, width /2, height / 2));
 
         // This part triggers an asynchronous call to go grab the data in another file...file places in _site folder?
         //  stuff inside this fuction might not actually happen for a while!
