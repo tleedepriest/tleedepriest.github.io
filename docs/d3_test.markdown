@@ -45,6 +45,7 @@ permalink: /d3test/
         // This part triggers an asynchronous call to go grab the data in another file...file places in _site folder?
         //  stuff inside this function might not actually happen for a while!
         d3.json("/data.json").then( graph => {
+	    console.log(graph);
 
             // First we create the links in their own group that comes before the node 
             //  group (so the circles will always be on top of the lines)
