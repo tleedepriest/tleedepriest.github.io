@@ -21,8 +21,8 @@ permalink: /d3test/
 <svg id="d3viz"></svg>
 <script>
     {
-        let width = 800;
-        let height = 600;
+        let width = 3000;
+        let height = 3000;
 
         let svg = d3.select("#d3viz")
             .attr('width', width)
