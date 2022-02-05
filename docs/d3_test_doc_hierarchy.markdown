@@ -70,4 +70,5 @@ d3.json("/d3-dendrogram.json", function(error, root) {
 d3.select(self.frameElement).style("height", height + "px");
 
 </script>
+</body>
 [jekyll-organization]: https://github.com/jekyll
