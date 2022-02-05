@@ -22,8 +22,7 @@ permalink: /d3test_hierarhcy/
 }
 
 </style>
-<body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
 var width = 800,
@@ -70,5 +69,4 @@ d3.json("/d3-dendrogram.json", function(error, root) {
 d3.select(self.frameElement).style("height", height + "px");
 
 </script>
-</body>
 [jekyll-organization]: https://github.com/jekyll
