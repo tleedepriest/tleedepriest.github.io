@@ -59,11 +59,11 @@ d3.json("/d3-dendrogram.json", function(error, root) {
   node.append("circle")
       .attr("r", 4.5);
 
-  node.append("text")
-      .attr("dx", function(d) { return d.children ? -8 : 8; })
-      .attr("dy", 3)
-      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
-      .text(function(d) { return d.name; });
+  //node.append("text")
+  //    .attr("dx", function(d) { return d.children ? -8 : 8; })
+  //    .attr("dy", 3)
+  //    .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+  //    .text(function(d) { return d.name; });
 });
 
 d3.select(self.frameElement).style("height", height + "px");
