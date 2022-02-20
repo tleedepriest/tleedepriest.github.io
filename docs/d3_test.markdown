@@ -61,7 +61,7 @@ permalink: /d3test/
             // Now we create the node group, and the nodes inside it
             let nodeLayer = svg.append("g")
                 .attr("class", "nodes");
-            let nodes_text = nodeLayer..append("text").text( d => d.entity )
+            let nodes_text = nodeLayer.append("text").text( d => d.entity )
             let nodes = nodeLayer
                 .selectAll("circle")
                 .data(graph.nodes)
