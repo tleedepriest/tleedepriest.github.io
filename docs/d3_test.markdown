@@ -61,7 +61,6 @@ permalink: /d3test/
             // Now we create the node group, and the nodes inside it
             let nodeLayer = svg.append("g")
                 .attr("class", "nodes");
-            let nodes_text = nodeLayer.append("text").text( d => d.entity )
             let nodes = nodeLayer
                 .selectAll("circle")
                 .data(graph.nodes)
@@ -81,6 +80,7 @@ permalink: /d3test/
             nodes.append("title")
                 .text( d => d.id );
 
+            nodeLayer.append("text").text( d => d.entity );
             // Now that we have the data, let's give it to the simulation...
             simulation.nodes(graph.nodes);
             // The tension force (the forceLink that we named "link" above) also needs
