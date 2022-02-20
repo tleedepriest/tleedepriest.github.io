@@ -79,8 +79,7 @@ permalink: /d3test/
             //  see the node's id
             nodes.append("title")
                 .text( d => d.id );
-            nodes.append("text")
-                .text( d => d.entity );
+            nodes.append("text").text( d => d.entity );
 
             // Now that we have the data, let's give it to the simulation...
             simulation.nodes(graph.nodes);
