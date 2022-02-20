@@ -66,6 +66,8 @@ permalink: /d3test/
                 .data(graph.nodes)
                 .enter().append("circle")
                 .attr("r", 5)
+                
+                .append("text").text( d => d.entity )
                 //.attr("fill", d => color(d.group))
                 // This part adds event listeners to each of the nodes; when you click,
                 //  move, and release the mouse on a node, each of these functions gets 
@@ -79,7 +81,6 @@ permalink: /d3test/
             //  see the node's id
             nodes.append("title")
                 .text( d => d.id );
-            nodes.append("text").text( d => d.entity );
 
             // Now that we have the data, let's give it to the simulation...
             simulation.nodes(graph.nodes);
