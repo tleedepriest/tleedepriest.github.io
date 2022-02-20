@@ -29,8 +29,8 @@ line.link {
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var width = 960,
-    height = 500,
+var width = 3000,
+    height = 3000,
     root;
 
 var force = d3.layout.force()
